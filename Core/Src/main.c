@@ -63,7 +63,7 @@ void EXTI11_IRQHandler(void)
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-  if (GPIO_Pin == GPIO_PIN_0)
+  if (GPIO_Pin == GPIO_PIN_11)
   {
     char msg[] = "Button pressed!\r\n";
     HAL_UART_Transmit(&huart1, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
@@ -108,6 +108,9 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  char msg[] = "started!\r\n";
+  HAL_UART_Transmit(&huart1, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
+
   while (1)
   {
     /* USER CODE END WHILE */
